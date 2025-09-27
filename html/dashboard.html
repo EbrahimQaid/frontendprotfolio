@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - ProFly</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+<script>
+    if(localStorage.getItem('isLoggedIn') !== 'true'){
+        window.location.href = '../index.html';
+    }
+</script>
+
+<header>  
+  <nav class="header_container">
+    <div class="logo_container">
+        <img class="logo_image" src="../image/loupe.png" alt="logo_image">
+        <a class="logo_text" href="../index.html">ProFly</a>
+    </div>
+    <div class="header_right">
+        <button id="logoutBtn" class="Sing_button">Logout</button>
+    </div>
+  </nav>
+</header>
+
+<div class="dashboard-container">
+    <aside>
+        <h2 class="sec_title">Dashboard</h2>
+        <a href="#" data-page="overview">Overview</a>
+        <a href="#" data-page="add">Add Data</a>
+        <a href="#" data-page="settings">Settings</a>
+    </aside>
+    <main id="mainContent">
+        <!-- سيتم عرض المحتوى هنا حسب الصفحة -->
+    </main>
+</div>
+
+<script src="../dashboard.js"></script>
+</body>
+</html>

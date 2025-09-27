@@ -1,0 +1,212 @@
+/* ===== Reset & Base ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background-color: #f4f9f6;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Header ===== */
+.header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo_container {
+    display: flex;
+    align-items: center;
+}
+
+.logo_image {
+    width: 40px;
+    height: 40px;
+}
+
+.logo_text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #af0e0e;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.header_right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Sing_button {
+    background-color: #af0e0e;
+    color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 8px 16px;
+    border: none;
+    transition: 0.3s;
+}
+.Sing_button:hover {
+    background-color: #8a0b0b;
+    color: #fff;
+}
+
+/* ===== Dashboard Container ===== */
+.dashboard-container {
+    display: flex;
+    margin-top: 90px; /* Header height */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* ===== Sidebar ===== */
+aside {
+    width: 250px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+aside h2 {
+    color: #af0e0e;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+aside a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+aside a:hover {
+    background-color: #af0e0e;
+    color: #fff;
+}
+
+/* ===== Main Content ===== */
+main {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    min-height: 70vh;
+}
+
+/* ===== Tables ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #f4f4f4;
+    color: #af0e0e;
+}
+
+table tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* ===== Buttons ===== */
+button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button.edit {
+    background-color: #00aaff;
+    color: #fff;
+}
+
+button.delete {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+
+/* ===== Form Inputs ===== */
+input[type=text], input[type=number], select {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+input[type=text]:focus, input[type=number]:focus, select:focus {
+    outline: none;
+    border: 2px solid #af0e0e;
+}
+
+/* ===== Success / Toast Message ===== */
+#addMsg {
+    font-weight: bold;
+    color: #00aa00;
+}
+
+/* ===== Settings Page ===== */
+#colorPicker {
+    width: 60px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px){
+    .dashboard-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    aside { width: 90%; margin-bottom: 20px; }
+    main { width: 90%; }
+}
+
+@media (max-width: 480px){
+    .header_container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .Sing_button { width: 100%; text-align: center; }
+    aside { padding: 15px; }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProFly - About</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/about.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="nav-container">
+      <div class="logo-container">
+        <img class="logo-image" src="../image/loupe.png" alt="logo-image">
+        <a class="logo-text" href="../index.html">ProFly</a>
+      </div>
+
+      <div class="menu-toggle" id="mobile-menu">
+        <span></span><span></span><span></span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="./create-profile.html">Create Profile</a></li>
+        <li><a href="./gallery.html">Gallery</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href=".//contact.html">Contact</a></li>
+      </ul>
+
+      <div class="header-right">
+        <a class="sign-button" href="./html/login.html">Sign In</a>
+        <div class="notification">
+          <span class="notification-count">3</span>
+    </nav>
+  </header>
+
+
+  <!-- Main Content -->
+  <main>
+    <div class="about-container">
+      <h1>About ProFly</h1>
+      <p>ProFly is a professional platform designed to showcase your skills and profiles in Yemen.
+        Our mission is to connect talent with opportunities and provide an interactive experience for everyone.
+        Explore profiles, create your own, and join a growing community of professionals.</p>
+      <a class="back" href="../index.html"><i class="fas fa-arrow-left"></i>Back</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 Profly. جميع الحقوق محفوظة.</p>
+      <nav class="footer-nav">
+        <a href="./html/question.html">Question</a>
+        <a href="./html/about.html">About Us</a>
+        <a href="./html/contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link=>{
+    link.addEventListener('click',()=>{ 
+      navLinks.classList.remove('active'); 
+      menuToggle.classList.remove('active'); 
+    });
+  });
+
+  document.addEventListener('click', function(event) {
+    const nav = document.querySelector('.nav-container');
+    if (!nav.contains(event.target) && !menuToggle.contains(event.target)) {
+      navLinks.classList.remove('active');
+      menuToggle.classList.remove('active');
+    }
+  });
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Create Card</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f9f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .back {
+    text-decoration: none;
+    color: #af0e0e;
+    font-weight: 600;
+    margin: 5em;
+    }
+
+    .back:hover {
+      color: #8a0b0b;
+    }
+
+
+    .create-card-container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 350px;
+    }
+
+    .create-card-container h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+
+    .create-card-container label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    .create-card-container input,
+    .create-card-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .create-card-container button {
+      width: 100%;
+      padding: 12px;
+      background: #af0e0e;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .create-card-container button:hover {
+      background: #8a0b0b;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="create-card-container">
+    <form id="createCardForm">
+      <h2>Create New Card</h2>
+
+      <label for="cardImage">Image URL</label>
+      <input type="text" id="cardImage" placeholder="Enter image URL" required>
+
+      <label for="cardName">Name</label>
+      <input type="text" id="cardName" placeholder="Enter name" required>
+
+      <label for="cardDesc">Description</label>
+      <textarea id="cardDesc" placeholder="Enter description" required></textarea>
+
+      <button type="submit">Add Card</button>
+    </form>
+    <a href="gallery.html" class="back"><i class="fas fa-arrow-left"></i>Back to Gallery</a>
+  </div>
+
+  <script>
+    const createCardForm = document.getElementById('createCardForm');
+
+    createCardForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const image = document.getElementById('cardImage').value.trim();
+      const name = document.getElementById('cardName').value.trim();
+      const desc = document.getElementById('cardDesc').value.trim();
+
+      let cards = JSON.parse(localStorage.getItem('products')) || [];
+
+      cards.push({ img: image, name, desc });
+
+      localStorage.setItem('products', JSON.stringify(cards));
+
+      alert("✅ Card Added Successfully!");
+      window.location.href = "gallery.html";
+    });
+  </script>
+</body>
+
+</html>

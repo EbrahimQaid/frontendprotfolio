@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ProFly Gallery</title>
+    <link rel="stylesheet" href="../headeer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="logo-container">
+                <img class="logo-image" src="../image/loupe.png" alt="logo-image">
+                <a class="logo-text" href="../index.html">ProFly</a>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="create-profile.html">Create Profile</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="header-right">
+                <a class="sign-button" href="./login.html">Sign in</a>
+                <button id="darkToggle" class="dark-toggle">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 class="sec_title">Our Products / Services</h1>
+        <section class="gallery-container" id="gallery">
+            <!-- الكروت ستأتي من JS -->
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <img src="" alt="Product Image" id="modalImg">
+            <h2 id="modalName"></h2>
+            <p id="modalDesc"></p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 Profly. جميع الحقوق محفوظة.</p>
+            <nav class="footer-nav">
+                <a href="question.html">Question</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../main.js"></script>
+</body>
+</html>

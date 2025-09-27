@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProFly - Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <!-- Splash Screen -->
+  <div id="splash">
+    <img src="./image/loupe.png" alt="ProFly Logo" class="splash-logo">
+    <h1 class="splash-text">ProFly</h1>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <nav class="nav-container">
+      <div class="logo-container">
+        <img class="logo-image" src="./image/loupe.png" alt="logo-image">
+        <a class="logo-text" href="./index.html">ProFly</a>
+      </div>
+      
+      <div class="menu-toggle" id="mobile-menu">
+        <span></span><span></span><span></span>
+      </div>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="./html/create-profile.html">Create Profile</a></li>
+        <li><a href="./html/gallery.html">Gallery</a></li>
+        <li><a href="./html/about.html">About</a></li>
+        <li><a href="./html/contact.html">Contact</a></li>
+      </ul>
+
+      <div class="header-right">
+        <a class="sign-button" href="./html/login.html">Sign In</a>
+        <div class="notification">
+          <span class="notification-count">3</span>
+        </div>
+        <button id="darkToggle" class="dark-toggle">D</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="begin-container">
+      <h1>Welcome To ProFly</h1>
+      <p>ProFly it's The Best Website To View Your Skills In Yemen</p>
+      <a class="begin-button" href="./html/create-profile.html">Create Your Profile</a>
+    </section>
+
+    <!-- Image Slider -->
+    <section class="slider-container">
+      <div class="slider">
+        <div class="slide"><img src="./image/image.png" alt="Slider Image 1"></div>
+        <div class="slide"><img src="./image/image.png" alt="Slider Image 2"></div>
+        <div class="slide"><img src="./image/image.png" alt="Slider Image 3"></div>
+      </div>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="container">
+      <section class="card">
+        <img class="p-image" src="./image/avatar-2.jpg" alt="Sofia Tom">
+        <div class="card-info">
+          <h2 class="p-name">Sofia Tom</h2>
+          <h4 class="p-sc">Frontend Developer</h4>
+          <div class="card-icon">
+            <button><i class="fab fa-linkedin"></i></button>
+            <button class="button-two"><i class="fab fa-github"></i></button>
+            <button class="button-three"><i class="fab fa-twitter"></i></button>
+          </div>
+        </div>
+      </section>
+      <section class="card">
+        <img class="p-image" src="./image/avatar-3.jpg" alt="Golia Jun">
+        <div class="card-info">
+          <h2 class="p-name">Golia Jun</h2>
+          <h4 class="p-sc">Software Engineer</h4>
+          <div class="card-icon">
+            <button><i class="fab fa-linkedin"></i></button>
+            <button class="button-two"><i class="fab fa-github"></i></button>
+            <button class="button-three"><i class="fab fa-twitter"></i></button>
+          </div>
+        </div>
+      </section>
+      <section class="card">
+        <img class="p-image" src="./image/avatar-4.jpg" alt="Silas Jnoth">
+        <div class="card-info">
+          <h2 class="p-name">Silas Jnoth</h2>
+          <h4 class="p-sc">Architect Engineer</h4>
+          <div class="card-icon">
+            <button><i class="fab fa-linkedin"></i></button>
+            <button class="button-two"><i class="fab fa-github"></i></button>
+            <button class="button-three"><i class="fab fa-twitter"></i></button>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="end-container">
+      <h2 class="text-cont">Are You Ready To Go?</h2>
+      <a href="./html/login.html">Sign up now</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 Profly. جميع الحقوق محفوظة.</p>
+      <nav class="footer-nav">
+        <a href="./html/question.html">Question</a>
+        <a href="./html/about.html">About Us</a>
+        <a href="./html/contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+<script>
+  // Splash Screen
+  window.addEventListener("load", () => {
+    setTimeout(() => document.getElementById("splash").style.display="none", 2000);
+
+    // Dark Mode from localStorage
+    if(localStorage.getItem("darkMode") === "enabled"){
+      document.body.classList.add("dark-mode");
+    }
+
+    // Update Sign Button
+    updateSignButton();
+  });
+
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link=>{
+    link.addEventListener('click',()=>{ 
+      navLinks.classList.remove('active'); 
+      menuToggle.classList.remove('active'); 
+    });
+  });
+
+  document.addEventListener('click', function(event) {
+    const nav = document.querySelector('.nav-container');
+    if (!nav.contains(event.target) && !menuToggle.contains(event.target)) {
+      navLinks.classList.remove('active');
+      menuToggle.classList.remove('active');
+    }
+  });
+
+  // Dark Mode Toggle
+  const darkToggle = document.getElementById('darkToggle');
+  darkToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    if(document.body.classList.contains('dark-mode')){
+      localStorage.setItem("darkMode", "enabled");
+    } else {
+      localStorage.setItem("darkMode", "disabled");
+    }
+  });
+
+  // Slider JS
+  const slider = document.querySelector('.slider');
+  const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+  const dots = document.querySelectorAll('.dot');
+  let index = 0;
+
+  function updateSlider() {
+    const slideWidth = slides[0].clientWidth;
+    slider.style.transform = `translateX(${-index * slideWidth}px)`;
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+  }
+
+  prevBtn.addEventListener('click', () => {
+    index = (index > 0) ? index - 1 : slides.length - 1;
+    updateSlider();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    index = (index < slides.length - 1) ? index + 1 : 0;
+    updateSlider();
+  });
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      index = i;
+      updateSlider();
+    });
+  });
+
+  setInterval(() => {
+    index = (index < slides.length - 1) ? index + 1 : 0;
+    updateSlider();
+  }, 4000);
+
+  // ===== Sign In / Dashboard Button =====
+const signButton = document.querySelector('.sign-button');
+
+function updateSignButton() {
+    const userLoggedIn = localStorage.getItem('userLoggedIn');
+    if(userLoggedIn === "true") {
+        signButton.textContent = "Dashboard";
+        signButton.href = "./html/dashboard.html";
+    } else {
+        signButton.textContent = "Sign In";
+        signButton.href = "./html/login.html";
+    }
+}
+
+// عند تحميل الصفحة
+window.addEventListener('load', updateSignButton);
+
+</script>
+</body>
+</html>
