@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProFly - Dashboard</title>
+  <meta name="description" content="Manage your ProFly profiles, add new profiles, and customize settings.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+<script>
+  if(localStorage.getItem('userLoggedIn') !== 'true'){
+    window.location.href = '../html/login.html';
+  }
+</script>
+
+<!-- Header -->
+<div id="app-header"></div>
+
+<main class="dashboard-main">
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <h2 class="sec_title">Dashboard</h2>
+      <nav class="sidebar-nav">
+        <a href="#" class="active" data-page="overview"><i class="fa-solid fa-chart-pie"></i> Overview</a>
+        <a href="#" data-page="add"><i class="fa-solid fa-plus"></i> Add Profile</a>
+        <a href="#" data-page="settings"><i class="fa-solid fa-gear"></i> Settings</a>
+        <a href="../index.html"><i class="fa-solid fa-house"></i> Back to Home</a>
+        <a href="#" id="sidebarLogout" style="color:#ef4444;"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="dashboard-content">
+      <!-- Content will be injected here by dashboard.js -->
+      <div class="content-placeholder">
+        <i class="fa-solid fa-spinner fa-spin"></i> Loading...
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<div id="app-footer"></div>
+
+<script src="../js/dashboard.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/app.js"></script>
+</body>
+</html>
