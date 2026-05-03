@@ -9,7 +9,7 @@
 
 **A modern, responsive portfolio showcase platform built with pure HTML, CSS, and JavaScript.**
 
-[🔗 Live Demo](https://ebrahimqaid.github.io/frontendprotfolio/) 
+[🔗 Live Demo](https://ebrahimqaid.github.io/profly/) 
 
 </div>
 
