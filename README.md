@@ -9,7 +9,7 @@
 
 **A modern, responsive portfolio showcase platform built with pure HTML, CSS, and JavaScript.**
 
-[🔗 Live Demo](https://ebrahimqaid.github.io/frontendprotfolio/) · [📂 Report Bug](https://github.com/EbrahimQaid/frontendprotfolio/issues)
+[🔗 Live Demo](https://ebrahimqaid.github.io/frontendprotfolio/) 
 
 </div>
 
